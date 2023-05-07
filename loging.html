@@ -26,5 +26,26 @@
     </body>
 </html>
 <script>
-
+ $(document).ready(function(){
+       $('#btnRegister').click(function(){
+        const url = 'http://localhost:8080/users';
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;  
+      fetch(url)
+      .then((resp) => resp.json())
+      .then(function(data) {
+        var DatosJson = JSON.parse(JSON.stringify(data));
+          for (i = 0; i < DatosJson.length; i++){
+            if(DatosJson[i].user == email || DatosJson[i].password == password) {
+                alert('Usuario encontrado en la base de datos.')
+            } else {
+                alert('Credenciales incorrectas o verifica tu conexión a internet');
+            }
+          }
+      })
+      .catch(function(error) {
+        console.log(error);
+      }); 
+       });
+    });
 </script>
