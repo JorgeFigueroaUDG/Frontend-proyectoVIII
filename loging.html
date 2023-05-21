@@ -1,18 +1,24 @@
 <html>
     <head>
-        <title>Frontend - Proyecto VIII</title>
-        <link rel="stylesheet" href="styles/style.css">
+        <title>Producto integrador Proyecto VIII</title>
+        <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8"/>
         <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/sorttable.js"></script>
+        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script src="styles/jquery-ui.min.js"></script>
+        <script src="js/functions.js"></script>
         <link rel="stylesheet" href="styles/jquery-ui.min.css" type="text/css">
         <link rel="stylesheet" href="styles/jquery-ui.structure.min.css" type="text/css">
         <link rel="stylesheet" href="styles/jquery-ui.theme.min.css" type="text/css">
+        
+        
     </head>
     <body>
 
         <div class="main">
-            <p class="sign" align="center">Frontend - Proyecto VIII</p>
+            <p class="sign" align="center">Producto integrador Proyecto VIII</p>
             <br>
             <form class="form1" action="iniciada.php" method="POST" id="form1"><br>
                 <input class="un " type="email" align="center" id="email" placeholder="Correo electronico" required name="email" name="email"><br>
@@ -26,26 +32,5 @@
     </body>
 </html>
 <script>
- $(document).ready(function(){
-       $('#btnRegister').click(function(){
-        const url = 'http://localhost:8080/users';
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;  
-      fetch(url)
-      .then((resp) => resp.json())
-      .then(function(data) {
-        var DatosJson = JSON.parse(JSON.stringify(data));
-          for (i = 0; i < DatosJson.length; i++){
-            if(DatosJson[i].user == email || DatosJson[i].password == password) {
-                alert('Usuario encontrado en la base de datos.')
-            } else {
-                alert('Credenciales incorrectas o verifica tu conexión a internet');
-            }
-          }
-      })
-      .catch(function(error) {
-        console.log(error);
-      }); 
-       });
-    });
+
 </script>

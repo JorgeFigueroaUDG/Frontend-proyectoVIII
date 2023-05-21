@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Producto integrador | Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/sorttable.js"></script>
+        <script src="js/functions.js"></script>
+        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="#">
+                    Producto integrador
+                </a>
+                <div class="mobile-menu">
+                    <a href="#navegacion">
+                        <img src="img/barras.svg" alt="Icono Menu">
+                    </a>
+                </div>
+                <nav id="navegacion" class="navegacion">
+                    <a href="allmovies.html">Todas las peliculas</a>
+                    <a href="#">Mis peliculas favoritas</a>
+                    <a href="loging.html">Cerrar sesión</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <br><br><br>
+    <div id="div1">
+        <table id="Table1" class="sortable">
+            <thead>
+                <tr>
+                    <th><span>Titulo</span></th>
+                    <th><span>Año</span></th>
+                    <th><span>Sinopsis</span></th>
+                    <th><span>Autor</span></th>
+                    <th><span>URL</span></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+    
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <main class="contenedor seccion contenido-centrado">
+    <h1>Agregar nueva pelicula favorita</h1>
+
+    <form class="form1" action="inicio.html" method="POST" id="form1">
+        <fieldset>
+            <legend>Datos de la pelicula</legend>
+            <label for="Titulo">Titulo:</label>
+            <input type="text" id="title" placeholder="Titulo" name="title">
+
+            <label for="Autor">Autor:</label>
+            <input type="text" id="autor" placeholder="Autor" name="autor">
+
+            <label for="url">url:</label>
+            <input type="text" id="url" placeholder="url" name="url">
+
+            <label for="año">Año:</label>
+            <input type="text" id="year" placeholder="Año" name="year">
+
+            <label for="Sinopsis">Sinopsis: </label>
+            <textarea  id="comment" name="comment"></textarea>
+    </fieldset>
+    <button type="button" class="boton boton-verde" id="btnMovieRegister">Registrar</button>
+    </form>
+    <br><br>
+    </main>
+
+    <main class="contenedor seccion contenido-centrado">
+        <h1>Borrar alguna pelicula exitente</h1>
+    
+        <form class="form1" action="inicio.html" method="POST" id="form1">
+            <fieldset>
+                <legend>Datos de la pelicula</legend>
+                <label for="Titulo">Titulo:</label>
+                <input type="text" id="titleDelete" placeholder="Titulo" name="title">
+        </fieldset>
+        <button type="button" class="boton boton-verde" id="btnDeleteMovie">Eliminar pelicula</button>
+        </form>
+        <br><br>
+        </main>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <p class="copyright">Todos los Derechos Reservados 2023 UDG virtual SFJE  jorfigsf1@gmail.com&copy; </p>
+            <p class="copyright">Proyecto VIII Codigo: 219917517</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+$(window).on("load", function(){
+    getToken();
+    getAllInformation();
+}); 
+</script>
